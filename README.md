@@ -1,2 +1,3 @@
-# harisuriya
-A page created by HARISURIYA K R and hosted by github
+Job book
+It is a social platform to notify joc openings
+copyright by jobbook media inc,all right reserved.
