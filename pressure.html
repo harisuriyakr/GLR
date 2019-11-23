@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>GLR peralstaltic pump</title>
+
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<meta charset="utf-8">
+    <link rel="stylesheet" href="projects.css">
+
+
+
+<style>
+    #chart {
+        max-width: 650px;
+        margin: 35px auto;
+    }
+    </style>
+</head>
+<body>
+<!-----NavigationBar----->
+<section id="nav-bar">
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" "><img src="logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" onclick="window.location.href='user.html';">temperature </a>
+<li class="nav-item ">
+        <a class="nav-link" href="glr.html">logout</a>
+      </li>
+    
+    </ul>
+  </div>
+</nav>
+
+       
+
+</section>
+
+<h1>Pressure in bar</h1>
+
+ <div id="app"></div>
+  
+  <div id="html">
+          &lt;div id=&quot;chart&quot;&gt;&#10;            &lt;ReactApexChart options={this.state.options} series={this.state.series} type=&quot;line&quot; height=&quot;350&quot; /&gt;&#10;          &lt;/div&gt;
+  </div>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.6.2/prop-types.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+  <script src="https://unpkg.com/react-apexcharts@1.1.0/dist/react-apexcharts.iife.min.js"></script>
+
+  <script type="text/babel">
+
+class LineChart extends React.Component {
+    
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        options: {
+          chart: {
+            type: 'line',
+            shadow: {
+              enabled: false,
+              color: '#bbb',
+              top: 3,
+              left: 2,
+              blur: 3,
+              opacity: 1
+            },
+          },
+          stroke: {
+            width: 7,
+            curve: 'smooth'
+          },
+
+          xaxis: {
+            type: 'datetime',
+            categories: ["2019-11-23T00:00:00", "2019-11-23T01:30:00", "2019-11-23T02:30:00",
+                "2019-11-23T03:30:00", "2019-11-23T04:30:00", "2019-11-23T05:30:00",
+                "2019-11-23T06:30:00"
+            ],
+          },
+          title: {
+            text: 'Pressure in Bar',
+            align: 'left',
+            style: {
+              fontSize: "16px",
+              color: '#666'
+            }
+          },
+          fill: {
+            type: 'gradient',
+            gradient: {
+              shade: 'dark',
+              gradientToColors: ['#FDD835'],
+              shadeIntensity: 1,
+              type: 'horizontal',
+              opacityFrom: 1,
+              opacityTo: 1,
+              stops: [0, 100, 100, 100]
+            },
+          },
+          markers: {
+            size: 4,
+            opacity: 0.9,
+            colors: ["#FFA41B"],
+            strokeColor: "#fff",
+            strokeWidth: 2,
+             
+            hover: {
+              size: 7,
+            }
+          },
+          yaxis: {
+            min: -10,
+            max: 40,
+            title: {
+              text: 'Pressure in bar',
+            },
+          }
+        },
+        series: [{
+          name: 'pressure in Bar',
+          data: [ 9, 29, 19, 22, 9, 12]
+        }],
+      }
+    }
+
+    render() {
+
+      return (
+        <div>
+          <div id="chart">
+            <ReactApexChart options={this.state.options} series={this.state.series} type="line" height="350" />
+          </div>
+          <div id="html-dist">
+          </div>
+        </div>
+      );
+    }
+  }
+
+  const domContainer = document.querySelector('#app');
+  ReactDOM.render(React.createElement(LineChart), domContainer);
+</script>
+
+</body>
+
+</html>
