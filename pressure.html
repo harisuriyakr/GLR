@@ -156,6 +156,29 @@ class LineChart extends React.Component {
   const domContainer = document.querySelector('#app');
   ReactDOM.render(React.createElement(LineChart), domContainer);
 </script>
+                             
+                           <button class="open-button" onclick="openForm()">PUMP</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>PERALSTALTIC PUMP</h1>
+
+
+    <button type="submit" class="btn"><a href="turnon.html">TURNON</a></bUtton>
+    <button type="button" class="btn cancel" onclick="closeForm()"><a href="turnoff.html">TURNOFF</a></button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>  
+                             
                              <div class="footer">
   <p>&copy2019 by GLR Labs,Developed by<a href="https://harisuriyakr.github.io"> Harisuriya K.R</a></p>
 
