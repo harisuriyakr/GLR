@@ -228,7 +228,7 @@ select.flat-select {
     display: none;
 }
 .footer {
-   position: fixed;
+   position: bottom;
    left: 0;
    bottom: 0;
    width: 100%;
@@ -247,7 +247,7 @@ select.flat-select {
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  position: fixed;
+  position: right;
   bottom: 23px;
   right: 28px;
   width: 280px;
@@ -257,7 +257,7 @@ select.flat-select {
 .chat-popup {
   display: none;
   position: fixed;
-  bottom: 0;
+  bottom: 20%;
   right: 15px;
   border: 3px solid #f1f1f1;
   z-index: 9;
@@ -284,7 +284,7 @@ select.flat-select {
 /* When the textarea gets focus, do something */
 .form-container textarea:focus {
   background-color: #ddd;
-  outline: none;
+  outline: black;
 }
 
 /* Set a style for the submit/send button */
